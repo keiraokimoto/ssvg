@@ -1,6 +1,6 @@
 ---
 permalink: /explanationsss.html
-layout: default
+layout: base
 search_exclude: true
 ---
 

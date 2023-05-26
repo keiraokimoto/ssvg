@@ -1,6 +1,6 @@
 ---
 title: Quiz Questions
-layout: default
+layout: base
 description: Our Frontend talking to Backend Python application serving questions.  This api allows us to get customer responses. 
 permalink: /data/quiz
 hide: true
@@ -26,8 +26,8 @@ tags: [javascript, fetch, dom, getElementID, appendChild]
   const resultContainer = document.getElementById("quiz_result");
 
   // prepare fetch urls
-  const url = "https://www.teamcheeseatimetime.tk/api/quiz";
-  const urllocal = "http://localhost:5000/api/quiz" ;
+  // const url = "https://www.teamcheeseatimetime.tk/api/quiz";
+  const url = "http://localhost:5000/api/quiz" ;
   
   const fetchQuizUrl = `/${subj}/${totalQs}`;
   // prepare fetch GET options

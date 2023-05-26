@@ -1,6 +1,6 @@
 ---
 title: Customer Questions
-layout: default
+layout: base
 description: Our Frontend talking to Backend Python application serving questions.  This api allows us to get customer responses. 
 permalink: /data/customer
 image: /images/feedback.jpeg
@@ -34,7 +34,7 @@ tags: [javascript, fetch, dom, getElementID, appendChild]
   const NO = "no";
 
   // prepare fetch urls
-  const url = "https://www.teamcheeseatimetime.tk/api/customer";
+  const url = "http://localhost:5000/api/customer";
   const like_url = url + "/like/";  // yes reaction
   const no_url = url + "/no/";  // no reaction
 
