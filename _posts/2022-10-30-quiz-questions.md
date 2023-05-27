@@ -1,6 +1,6 @@
 ---
 title: Quiz Questions
-layout: base
+layout: default
 description: Our Frontend talking to Backend Python application serving questions.  This api allows us to get customer responses. 
 permalink: /data/quiz
 hide: true

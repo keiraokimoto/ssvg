@@ -8,55 +8,40 @@ image: /images/feedback.jpeg
 tags: [javascript, fetch, dom, getElementID, appendChild]
 ---
 
-
 {% include custom-head.html %}
-<table id="flaskTable" class="table cell-border stripe" style="width:100%;">
+<table id="flaskTable" class="table cell-border stripe" style="width:80%;">
     <thead id="flaskHead">
         <tr>
             <th>Subject</th>
             <th>ID</th>
             <th>Question</th>
             <th>Answer</th>
-            <th>Pinned</th>
+            <th>Pinned</th>     
         </tr>
     </thead>
     <tbody id="flaskBody"></tbody>
 </table>
  
 <!-- Script is layed out in a sequence (without a function) and will execute when page is loaded -->
+
 <script>
+  // prepare fetch GET options
+  const options = {
+    method: 'GET', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'omit', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  };
+ 
+ 
   $(document).ready(function() {
   
   dataX = {};
-  fetch('http://localhost:5000/api/quiz/questions', { mode: 'cors' })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('API response failed');
-      }
-      return response.json();
-    })
-    .then(data => {
-      for (const row of data) {        
-        dataX[row.id] = row;        
-        $('#flaskBody').append('<tr><td>' + 
-            row.subject + '</td><td>' + 
-            row.qid + '</td><td>' + 
-            row.question + '</td><td>' + 
-            row.answer +  '</td>' +
-            createPinnedColumn(row.id, row.pinned)
-            + '</tr>'
-        );        
-      } 
-      $("#flaskTable").DataTable();
-      const pinb = document.getElementById('pinner');
-      if (pinb != undefined) {
-        pinb.addEventListener("click", handlePinEvent);
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-  });
+  refresh();
 
   function createPinnedColumn(id, isPinned) {    
     label = '' ; // isPinned ? 'pinned' : 'unpinned';
@@ -72,9 +57,60 @@ tags: [javascript, fetch, dom, getElementID, appendChild]
     
     pinned = event.target.checked;
     rec = dataX[event.target.id];
+    savePin(event.target.id, pinned);s
     // TODO: uset setPinned api
     // event.target.value = pinned ? 'pinned' : 'unpinned';
       
   }
-
+  function savePin(qNo, pinValue) {
+    const post_options = { 
+      ...options, 
+      method: 'PUT'
+    }; 
+    url = 'http://localhost:5000/api/quiz/questions/' + qNo + '/' + pinValue; 
+    
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('API response failed');
+        }
+        return 1;
+      })
+      .then(data => { 
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }
+  function refresh() {
+    fetch('http://localhost:5000/api/quiz/questions', { mode: 'cors' })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('API response failed');
+        }
+        return response.json();
+      })
+      .then(data => {
+        for (const row of data) {        
+          dataX[row.id] = row;        
+          $('#flaskBody').append('<tr><td>' + 
+              row.subject + '</td><td>' + 
+              row.qid + '</td><td>' + 
+              row.question + '</td><td>' + 
+              row.answer +  '</td>' +
+              createPinnedColumn(row.id, row.pinned)
+              + '</tr>'
+          ); 
+        }       
+        $("#flaskTable").DataTable();
+        const pinb = document.getElementById('pinner');
+        if (pinb != undefined) {
+          pinb.addEventListener("click", handlePinEvent);
+        } 
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }
+});
 </script>
