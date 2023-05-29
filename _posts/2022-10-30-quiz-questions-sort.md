@@ -9,7 +9,7 @@ tags: [javascript, fetch, dom, getElementID, appendChild]
 ---
 
 {% include custom-head.html %}
-<table id="flaskTable" class="table cell-border stripe" style="width:80%;">
+<table id="flaskTable" class="table cell-border stripe" style="width:80%; border:thick solid blue;background-color:#D9F1FF;">
     <thead id="flaskHead">
         <tr>
             <th>Subject</th>
