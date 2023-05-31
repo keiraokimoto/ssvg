@@ -4,28 +4,33 @@ search_exclude: true
 image: images/logo.png
 post: true
 ---
-
-If looking for explanations, please go to the explanations tab above, if ready to test your knowledge with a quiz, please scroll down!
-
-![]({{site.baseurl}}/images/calculus-physics-statistics-yeah.png "Our three crowning topics")
-
+<img src="{{site.baseurl}}/images/calculus-physics-statistics-yeah.png" alt="Python Development" height="300" width="1500">
 
 <div>
     <style>
         * {
-            background-color: rgb(193, 198, 254);
-            color: rgb(9, 26, 8);
+            background-color: rgb(194, 199, 255);
+            color: rgb(0, 0, 0);
+        }
+        button {
+            font-size: 25px;
+        }
+        h1 {
+            font-size: 60px;
+        }
+        li {
+            font-size:25px;
         }
     </style>
 </div>
-<div class="px-5 py-5 mx-auto">
-    <h1 class="text-white"><strong>Python Home Page</strong></h1>
+<div class="px-20 py-20 mx-auto">
+    <h1 class="text-black"><strong>Home</strong></h1>
     <div class="row">
         <div class="col-4">
             <div class="card">
                 <img class="card-img-top" src="{{site.baseurl}}/images/calc_img_ethyria_yeah.jpeg" alt="Python Development" height="250">
                 <div class="card-body">
-                <h5 class="card-title"><strong>Calculus Quiz</strong></h5>
+                <h1 class="card-title"><strong>Calculus Quiz</strong></h1>
                 <p class="card-text">
                     <ol>
                         <li>This quiz will pull from a set of 10 calculus questions, present you 5, in an effort to cultivate skills presented in the AP exam</li>
@@ -36,7 +41,7 @@ If looking for explanations, please go to the explanations tab above, if ready t
                         <li>Good Luck!</li>
                     </ol>
                 </p>
-                <a href="http://localhost:4000/teamcheesep3t8/data/quiz?subject=APCalc&totalQs=5" class="btn btn-primary">Calculus Quiz</a>
+                <button type="button"><a href="http://localhost:4000/teamcheesep3t8/data/quiz?subject=APCalc&totalQs=5" class="btn btn-primary">Calculus Quiz</a></button>
                 </div>
             </div>
         </div>
@@ -44,7 +49,7 @@ If looking for explanations, please go to the explanations tab above, if ready t
             <div class="card">
                 <img class="card-img-top" src="{{site.baseurl}}/images/statistics_img.jpeg" alt="Flask Development" height="250">
                 <div class="card-body">
-                <h5 class="card-title"><strong>Statistics Quiz</strong></h5>
+                <h1 class="card-title"><strong>Statistics Quiz</strong></h1>
                 <p class="card-text">
                     <ol>
                         <li>This quiz will pull from a set of 10 statistics questions, present you 5, in an effort to cultivate skills made in the first trimester</li>
@@ -55,7 +60,7 @@ If looking for explanations, please go to the explanations tab above, if ready t
                         <li>Good Luck!</li>
                     </ol>
                 </p>
-                <a href="http://localhost:4000/teamcheesep3t8/data/quiz?subject=APStats&totalQs=5" class="btn btn-primary">Statistics Quiz</a>
+                <button type="button"><a href="http://localhost:4000/teamcheesep3t8/data/quiz?subject=APStats&totalQs=5" class="btn btn-primary">Statistics Quiz</a></button>
                 </div>
             </div>
         </div>
@@ -63,7 +68,7 @@ If looking for explanations, please go to the explanations tab above, if ready t
             <div class="card">
                 <img class="card-img-top" src="{{site.baseurl}}/images/physics_image.png" alt="Backend and Persistence" height="250">
                 <div class="card-body">
-                <h5 class="card-title"><strong>Physics Quiz</strong></h5>
+                <h1 class="card-title"><strong>Physics Quiz</strong></h1>
                 <p class="card-text">
                     <ol>
                         <li>This quiz will pull from a set of 10 questions, present you 5 in an effort to cultivate skills presented in the AP exam</li>
@@ -74,10 +79,15 @@ If looking for explanations, please go to the explanations tab above, if ready t
                         <li>Good Luck!</li>
                     </ol>
                 </p>
-                <a href="http://localhost:4000/teamcheesep3t8/data/quiz?subject=Physics&totalQs=5" class="btn btn-primary">Physics Quiz</a>
+                <button type="button"><a href="http://localhost:4000/teamcheesep3t8/data/quiz?subject=Physics&totalQs=5">Physics Quiz</a></button>
+        <div class="col-4">
+            <h2>Please take the customer service survey, if you have the time! We would like to know what we can do to improve your experience.</h2>
+        <button type="button"><a href="http://localhost:4000/teamcheesep3t8/data/customer">Customer Service Survey</a></button>
+        <div class="col-4">
+            <h2>Here is the full list of questions, in a sortable table format. Pin the questions you want to review!</h2>
+        <button type="button"><a href="http://localhost:4000/teamcheesep3t8/data/quiz/sort">Full Question List</a></button>
                 </div>
             </div>
         </div>
-        
     </div>
 </div>

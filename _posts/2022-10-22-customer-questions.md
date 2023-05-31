@@ -34,21 +34,22 @@ tags: [javascript, fetch, dom, getElementID, appendChild]
   const NO = "no";
 
   // prepare fetch urls
-  const url = "http://localhost:5000/api/customer";
+  var url = "http://localhost:5000/api/quiz/customers";
+
   const like_url = url + "/like/";  // yes reaction
   const no_url = url + "/no/";  // no reaction
 
   // prepare fetch GET options
   const options = {
-    method: 'GET', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, *cors, same-origin
-    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'omit', // include, *same-origin, omit
+    method: 'GET',  
+    mode: 'cors',  
+    cache: 'default', 
+    credentials: 'omit',  
     headers: {
       'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
     },
   };
+  
   // prepare fetch PUT options, clones with JS Spread Operator (...)
   const put_options = {...options, method: 'PUT'}; // clones and replaces method
 
